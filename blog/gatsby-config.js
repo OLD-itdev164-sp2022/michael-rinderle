@@ -9,7 +9,14 @@ module.exports = {
         address: `Waukesha, WI`
     }
   },
-  plugins: [
+    plugins: [
+    {
+        resolve: `gatsby-source-contentful`,
+        options: {
+            spaceId: `43dojnui0bkg`,
+            accessToken: `v_paH0SZfvRvbQWB20Ebnv2ll0j5IY0JSlB_HjAAi8o`
+        }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
