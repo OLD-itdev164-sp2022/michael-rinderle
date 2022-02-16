@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Michael-Rinderle`,
@@ -9,16 +13,16 @@ module.exports = {
         address: `Waukesha, WI`
     }
   },
-    plugins: [
-    {
-        resolve: `gatsby-source-contentful`,
-        options: {
-            spaceId: `43dojnui0bkg`,
-            accessToken: `v_paH0SZfvRvbQWB20Ebnv2ll0j5IY0JSlB_HjAAi8o`
-        }
-    },
+  plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `${process.env.SPACE_ID}`,
+        accessToken: `${process.env.ACCESS_TOKEN}`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,6 +30,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
