@@ -1,12 +1,12 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
-import styled from 'styled-components';
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
 
 const Outer = styled.header`
     background: rebeccapurple;
     margin-bottom: 1.45rem;
-`;
+`
 
 const Inner = styled.div`
     margin: 0px auto;
@@ -16,7 +16,7 @@ const Inner = styled.div`
 
 const H1 = styled.h1`
     margin: 0px;
-`;
+`
 
 const StyledLink = styled(Link)`
     color: white;
@@ -24,7 +24,7 @@ const StyledLink = styled(Link)`
     &:hover {
         color: purple;
     }
-`;
+`
 
 const Header = ({ siteTitle }) => (
     <Outer>  
