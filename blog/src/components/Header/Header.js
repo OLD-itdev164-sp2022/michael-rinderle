@@ -37,6 +37,7 @@ const Header = ({ siteTitle }) => (
             <Section width={1/12}>
                 Search
             </Section>
+
         </Inner>
     </Outer>
 )
