@@ -1,14 +1,12 @@
+import styled, { ThemeConsumer } from 'styled-components';
+
+import { Flex } from 'rebass';
 import { H1 } from '../Heading';
-import { IconButton } from '../Button';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Search } from 'styled-icons/feather';
 import { SearchButton } from '../Button';
 import { Section } from '../Section';
-import styled from 'styled-components';
-import { Flex } from 'rebass';
-import styled, { ThemeConsumer } from 'styled-components';
 
 const Outer = styled.header`
     background: ${({ theme }) => theme.variants.header.primary.backgroundColor};

@@ -20,10 +20,10 @@ const IndexPage = ({ data }) => (
     <Seo title="Home" />
     <Grid>
       {
-        data.allContentfulBlogPost.edges.map(edges => (
+        data.allContentfulBlogPost.edges.map(edge => (
           <Card key={edge.node.id} width={256} p={3}>
             <Link to={edge.node.slug}>
-              <Image src={edge.node.heroImage.fluid.src} alt="hero image" />
+              <Image src={edge.node.heroImage.gatsbyImageData.images.fallback.src} alt="hero image" />
             </Link>
             <Heading>{edge.node.title}</Heading>
             <div>{edge.node.body.childMarkdownRemark.excerpt}</div>
@@ -38,26 +38,26 @@ export default IndexPage
 
 export const query = graphql`
 {
-    allContentfulBlogPost {
-      edges {
-        node {
-          id
-          title
-          slug
-          body {
-            childMarkdownRemark {
-              excerpt
-            }
+  allContentfulBlogPost {
+    edges {
+      node {
+        id
+        title
+        slug
+        body {
+          childMarkdownRemark {
+            excerpt
           }
-          heroImage {
-            gatsbyImageData(
-              layout: CONSTRAINED
-              placeholder: BLURRED
-              width: 300
-            )
-          }
+        }
+        heroImage {
+          gatsbyImageData(
+            layout: CONSTRAINED
+            placeholder: BLURRED
+            width: 300
+          )
         }
       }
     }
   }
+}
 `
