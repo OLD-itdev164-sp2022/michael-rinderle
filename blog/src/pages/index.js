@@ -2,9 +2,7 @@ import * as React from 'react';
 
 import { Box, Card, Heading, Image } from 'rebass';
 import { Link, graphql } from 'gatsby';
-import { List, ListItem } from '../components/List';
 
-import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import styled from 'styled-components';
