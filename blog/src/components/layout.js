@@ -6,16 +6,16 @@
  */
 
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+
+import { graphql, useStaticQuery } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
 
+import { Footer } from './Footer';
+import GlobalStyle from './GlobalStyle';
 import { Gray } from './themes/Gray';
 import { Header } from './Header';
-import GlobalStyle from './GlobalStyle';
-
 import { Main } from './Main';
-import { Footer } from './Footer';
+import PropTypes from 'prop-types';
 
 const Content = styled.div`
     margin: 0 auto;
@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
       <GlobalStyle /> 
       <Header siteTitle={data.site.siteMetadata.title } />
       <Content>
-        <Main>{children}</Main> 
+        <Main m={20}>{children}</Main> 
         <Footer>
             © { new Date().getFullYear() }, Built with
             {` `}
